@@ -1,0 +1,11 @@
+
+
+language:
+
+jdk:
+      - oraclejdk7
+      - openjdk7
+
+
+
+
