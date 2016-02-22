@@ -2,6 +2,8 @@
 
 # PersistenceQueue #
 
+![](https://travis-ci.org/yue9944882/PersistentQueue.svg?branch=master)
+
 ----------
 
 
