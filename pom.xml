@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kimmin.util</groupId>
-    <artifactId>persistence-queue</artifactId>
+    <artifactId>PersistentQueue</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -84,69 +84,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <plugins>
-            <!--<plugin>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-            <!--<executions>-->
-            <!--<execution>-->
-            <!--<goals>-->
-            <!--<goal>repackage</goal>-->
-            <!--</goals>-->
-            <!--</execution>-->
-            <!--</executions>-->
-            <!--<configuration>-->
-            <!--<mainClass>com.ctrip.freeway.monitor.MonitorServerApplication</mainClass>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.6</version>
-                <configuration>
-                    <descriptor>/assembly/config-server.xml</descriptor>
-                    <!-- not append assembly id in release file name -->
-                    <appendAssemblyId>false</appendAssemblyId>
-                    <finalName>${project.artifactId}-${package.environment}-${project.version}
-                    </finalName>
-                    <descriptors>
-                    </descriptors>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-        <resources>
-            <resource>
-                <directory>${project.basedir}/conf/${package.environment}</directory>
-                <includes>
-                    <include>*</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>src/main/webapp</directory>
-                <filtering>true</filtering>
-                <!--<includes>-->
-                <!--<include>**/*.html</include>-->
-                <!--</includes>-->
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-    </build>
-
-
-
 </project>
